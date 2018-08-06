@@ -7,8 +7,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "firebase": "^5.3.1",
     "react": "16.2.0",
     "react-native": "0.52.0",
+    "react-native-gridview": "^0.1.2",
     "react-native-paper": "^1.11.1",
     "react-native-share": "^1.1.0",
     "react-native-vector-icons": "^5.0.0",
