@@ -53,8 +53,11 @@ class CardDetailsScreen extends React.Component {
         return { title, message, url: dataUrl };
       })
       .then(opts => {
-        self.setState({ loading: false });
-        Share.open(opts);
+        Share.open(opts)
+          .then(() => {
+            self.setState({ loading: false });
+          })
+          .catch();
       })
       .catch(err => {
         self.setState({ loading: false });
