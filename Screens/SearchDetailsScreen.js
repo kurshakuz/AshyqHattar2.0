@@ -59,8 +59,6 @@ class SearchDetailsScreen extends React.Component {
   renderPhotos = () => {
     return (
       <View>
-        <StatusBar backgroundColor="#000000" />
-
         <GridView
           data={this.state.links}
           itemsPerRow={3}

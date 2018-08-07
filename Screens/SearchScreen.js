@@ -95,8 +95,6 @@ class SearchScreen extends React.Component {
 
     return (
       <View style={styles.pageContainer}>
-        <StatusBar backgroundColor="#000000" />
-
         <View style={styles.searchContainer}>
           <TextInput
             style={styles.searchText}

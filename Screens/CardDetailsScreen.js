@@ -6,7 +6,8 @@ import {
   Image,
   Button,
   StatusBar,
-  Dimensions
+  Dimensions,
+  TouchableOpacity
 } from "react-native";
 import RNFetchBlob from "rn-fetch-blob";
 import Share from "react-native-share";
@@ -76,8 +77,6 @@ class CardDetailsScreen extends React.Component {
 
     return (
       <View style={styles.mainContainer}>
-        <StatusBar backgroundColor="#000000" />
-
         <Image
           style={styles.image}
           resizeMode="contain"
@@ -87,7 +86,7 @@ class CardDetailsScreen extends React.Component {
         />
 
         <View style={styles.buttonContainer}>
-          <Button
+          {/* <Button
             color="#FF473A"
             disabled={this.state.loading}
             onPress={() =>
@@ -98,9 +97,45 @@ class CardDetailsScreen extends React.Component {
               )
             }
             title={this.state.loading ? "Суретті жүктеу..." : "Суретпен бөлісу"}
-          />
+          /> */}
+          {this.state.loading ? (
+            <DisabledShareButton />
+          ) : (
+            <ActiveShareButton
+              _downloadImageAndShare={() =>
+                this._downloadImageAndShare(
+                  "Ашық хат",
+                  "Бұл сурет Ashyq Hattar қосымшасынан алынған",
+                  photoUrl
+                )
+              }
+            />
+          )}
         </View>
       </View>
+    );
+  }
+}
+
+class ActiveShareButton extends React.Component {
+  render() {
+    return (
+      <TouchableOpacity
+        style={styles.activeShareButton}
+        onPress={this.props._downloadImageAndShare}
+      >
+        <Text style={styles.activeShareText}>СУРЕТПЕН БӨЛІСУ</Text>
+      </TouchableOpacity>
+    );
+  }
+}
+
+class DisabledShareButton extends React.Component {
+  render() {
+    return (
+      <TouchableOpacity style={styles.disabledShareButton} disabled={true}>
+        <Text style={styles.disabledShareText}>ЖҮКТЕЛУДЕ...</Text>
+      </TouchableOpacity>
     );
   }
 }
@@ -140,8 +175,35 @@ const styles = StyleSheet.create({
   buttonContainer: {
     position: "absolute",
     bottom: 20,
-    width: 200,
     left: Dimensions.get("window").width / 2 - 100
+  },
+  activeShareButton: {
+    backgroundColor: "#FF473A",
+    width: 200,
+    height: 35,
+    alignItems: "center",
+    shadowOffset: { width: 0, height: 2 },
+    borderRadius: 2
+  },
+  disabledShareButton: {
+    backgroundColor: "#C0C0C0",
+    width: 200,
+    height: 35,
+    alignItems: "center",
+    shadowOffset: { width: 0, height: 2 },
+    borderRadius: 2
+  },
+  activeShareText: {
+    marginTop: 7,
+    fontFamily: "Montserrat-Bold",
+    fontSize: 13,
+    color: "white"
+  },
+  disabledShareText: {
+    marginTop: 7,
+    fontFamily: "Montserrat-Bold",
+    fontSize: 13,
+    color: "#808080"
   }
 });
 

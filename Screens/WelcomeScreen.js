@@ -6,7 +6,8 @@ import {
   Button,
   ImageBackground,
   Dimensions,
-  StatusBar
+  StatusBar,
+  TouchableOpacity
 } from "react-native";
 
 class WelcomeScreen extends React.Component {
@@ -45,12 +46,7 @@ class WelcomeScreen extends React.Component {
                   Барлық ашық хаттар мен құттықтаулар бір жерде!
                 </Text>
               </View>
-
-              <Button
-                color="#FF473A"
-                title="Іздеу!"
-                onPress={this.goToSearch}
-              />
+              <SearchButton goToSearch={this.goToSearch} />
             </View>
             {/* <View style={styles.secContrainer}>
               <Text style={styles.additionalText}>
@@ -65,6 +61,19 @@ class WelcomeScreen extends React.Component {
           </View>
         </ImageBackground>
       </View>
+    );
+  }
+}
+
+class SearchButton extends React.Component {
+  render() {
+    return (
+      <TouchableOpacity
+        style={styles.searchButton}
+        onPress={this.props.goToSearch}
+      >
+        <Text style={styles.searchText}>ІЗДЕУ!</Text>
+      </TouchableOpacity>
     );
   }
 }
@@ -100,6 +109,20 @@ const styles = StyleSheet.create({
     marginBottom: 50,
     width: Dimensions.get("window").width - Dimensions.get("window").width / 3,
     justifyContent: "center"
+  },
+  searchButton: {
+    borderRadius: 2,
+    alignItems: "center",
+    backgroundColor: "#FF473A",
+    height: 32,
+    // width: "90%",
+    shadowOffset: { width: 0, height: 2 }
+  },
+  searchText: {
+    marginTop: 5,
+    fontFamily: "Montserrat-Bold",
+    fontSize: 13,
+    color: "white"
   }
 });
 
