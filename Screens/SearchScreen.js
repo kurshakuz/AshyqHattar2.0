@@ -141,7 +141,8 @@ const styles = StyleSheet.create({
   headerTextContainer: {
     width: 45,
     height: 40,
-    marginRight: 10
+    marginRight: 10,
+    marginTop: 5
   },
   pageContainer: {
     flex: 1,

@@ -101,7 +101,8 @@ const styles = StyleSheet.create({
   headerTextContainer: {
     width: 45,
     height: 40,
-    marginRight: 10
+    marginRight: 10,
+    marginTop: 5
   },
   imageSquare: {
     width: Dimensions.get("window").width / 3,
