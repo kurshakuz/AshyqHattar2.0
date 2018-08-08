@@ -33,9 +33,10 @@ class SearchScreen extends React.Component {
       ),
       headerRight: (
         <View style={styles.headerTextContainer}>
-          <Text style={styles.headerText}>ASHYQ</Text>
-          <Text style={{ fontSize: 5 }}> </Text>
-          <Text style={styles.headerText}>HATTAR</Text>
+          <Image
+            style={{ width: 45, height: 45 }}
+            source={require("../assets/Frame.png")}
+          />
         </View>
       )
     };
@@ -142,8 +143,8 @@ const styles = StyleSheet.create({
   headerTextContainer: {
     width: 45,
     height: 40,
-    marginRight: 10,
-    marginTop: 5
+    marginTop: 5,
+    marginRight: 10
   },
   pageContainer: {
     flex: 1,
