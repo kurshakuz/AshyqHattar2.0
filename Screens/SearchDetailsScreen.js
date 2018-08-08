@@ -87,7 +87,8 @@ class SearchDetailsScreen extends React.Component {
 const styles = StyleSheet.create({
   titleContainer: {
     flex: 1,
-    alignItems: "center"
+    alignItems: "center",
+    justifyContent: "center"
   },
   titleText: {
     fontFamily: "Montserrat-Regular",

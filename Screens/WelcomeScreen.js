@@ -36,7 +36,7 @@ class WelcomeScreen extends React.Component {
         <ImageBackground
           source={require("../assets/bkgrd.jpg")}
           style={{ width: "100%", height: "100%" }}
-          blurRadius={1}
+          blurRadius={0.5}
         >
           <View style={styles.mainContainer}>
             <View style={styles.firContainer}>
@@ -113,13 +113,12 @@ const styles = StyleSheet.create({
   searchButton: {
     borderRadius: 2,
     alignItems: "center",
+    justifyContent: "center",
     backgroundColor: "#FF473A",
     height: 32,
-    // width: "90%",
-    shadowOffset: { width: 0, height: 2 }
+    shadowOffset: { width: 0, height: 3 }
   },
   searchText: {
-    marginTop: 5,
     fontFamily: "Montserrat-Bold",
     fontSize: 13,
     color: "white"

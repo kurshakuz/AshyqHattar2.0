@@ -143,7 +143,8 @@ class DisabledShareButton extends React.Component {
 const styles = StyleSheet.create({
   titleContainer: {
     flex: 1,
-    alignItems: "center"
+    alignItems: "center",
+    justifyContent: "center"
   },
   titleText: {
     fontFamily: "Montserrat-Regular",
@@ -183,6 +184,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 35,
     alignItems: "center",
+    justifyContent: "center",
     shadowOffset: { width: 0, height: 2 },
     borderRadius: 2
   },
@@ -191,19 +193,18 @@ const styles = StyleSheet.create({
     width: 200,
     height: 35,
     alignItems: "center",
+    justifyContent: "center",
     shadowOffset: { width: 0, height: 2 },
     borderRadius: 2
   },
   activeShareText: {
-    marginTop: 7,
     fontFamily: "Montserrat-Bold",
-    fontSize: 13,
+    fontSize: 14,
     color: "white"
   },
   disabledShareText: {
-    marginTop: 7,
     fontFamily: "Montserrat-Bold",
-    fontSize: 13,
+    fontSize: 14,
     color: "#808080"
   }
 });
